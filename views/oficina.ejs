@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oficina · Tickets</title>
+  <link rel="stylesheet" href="/css/oficina.css">
+  <script type="module" src="/js/oficina.js"></script>
+</head>
+<body>
+  <header><div>Oficina</div></header>
+  <main>
+    <section>
+      <div class="barra"><h1>Tickets</h1><button id="novo">Novo ticket</button></div>
+      <div id="lista"></div>
+    </section>
+    <p id="mensagem" role="status"></p>
+    <section id="painel" hidden>
+      <h2 id="titulo"></h2>
+      <form id="formulario">
+        <fieldset><legend>Cliente</legend>
+          <label>Nome<input name="nome" required></label>
+          <label>Telefone<input name="telefone" type="tel" required></label>
+          <label>E-mail<input name="email"></label>
+        </fieldset>
+        <fieldset><legend>Veículo</legend>
+          <label>Modelo<input name="modelo" required></label>
+          <label>Tipo<input name="tipo" required></label>
+          <label>Placa<input name="placa"></label>
+          <label>Marca<input name="marca"></label>
+          <label>Ano<input name="ano" type="number" step="1"></label>
+        </fieldset>
+        <fieldset><legend>Ticket</legend>
+          <label>Defeito<textarea name="defeito" rows="3" required></textarea></label>
+          <label id="campo-status">Status<select name="status">
+            <% for (const status of statusTicket) { %>
+              <option value="<%= status %>"><%= status.replaceAll('_', ' ') %></option>
+            <% } %>
+          </select></label>
+        </fieldset>
+        <div id="historico" hidden>
+          <h3>Atualizações</h3><ul id="atualizacoes"></ul>
+          <h3>Orçamento</h3><p id="orcamento"></p>
+        </div>
+        <div class="acoes">
+          <button type="submit">Salvar</button>
+          <button type="button" class="secundario" id="fechar">Fechar</button>
+          <button type="button" class="excluir" id="excluir">Excluir ticket</button>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

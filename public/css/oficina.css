@@ -1,0 +1,19 @@
+:root { font: 16px/1.5 "Segoe UI", sans-serif; color: #222e38; background: #f5f6f4; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+header { background: #193f46; color: white; font-weight: 700; font-size: 1.3rem; }
+header div, main { max-width: 58rem; margin: auto; padding: 1rem; }
+section { background: white; border: 1px solid #d6dfdc; border-radius: .65rem; padding: clamp(1rem, 3vw, 2rem); }
+h1, h2 { margin: 0; }
+.barra, .acoes { display: flex; align-items: center; flex-wrap: wrap; gap: .75rem; }
+.barra { justify-content: space-between; margin-bottom: 1rem; }
+button { font: inherit; color: white; background: #19575d; border: 1px solid transparent; border-radius: .35rem; padding: .45rem .9rem; cursor: pointer; }
+.secundario, .linha { background: white; color: #18464c; border-color: #c8d5d3; }
+.excluir { background: white; color: #962e25; border-color: #daa7a4; margin-left: auto; }
+.linha { display: grid; grid-template-columns: auto 1fr auto; gap: 1rem; width: 100%; text-align: left; margin-top: .45rem; overflow-wrap: anywhere; }
+.linha:hover { background: #eef5f2; }
+fieldset { border: 0; border-top: 1px solid #d6dfdc; margin: 1.25rem 0; padding: .65rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); gap: .8rem; }
+legend { font-weight: 700; padding-right: .6rem; }
+input, select, textarea { display: block; font: inherit; width: 100%; padding: .45rem; border: 1px solid #a7b5b2; border-radius: .25rem; }
+#mensagem:empty { margin: .6rem; }
+@media (max-width: 32rem) { .linha { grid-template-columns: auto 1fr; } .linha small { grid-column: 2; } }

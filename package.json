@@ -1,0 +1,20 @@
+{
+  "name": "oficina-lab",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "db:migrate": "sequelize-cli db:migrate --config config/database.cjs --migrations-path database/migrations",
+    "prestart": "npm run db:migrate"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "sequelize": "^6.37.8",
+    "sqlite3": "^6.0.1"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.6.5"
+  }
+}
